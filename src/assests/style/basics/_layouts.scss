@@ -1,0 +1,33 @@
+.main-layout {
+    display: grid;
+    grid-template-columns: 20px 1fr 20px;
+
+    > * {
+        grid-column: 2;
+    }
+
+    > *.full {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (min-width: $break-narrow) {
+    .main-layout {
+        display: grid;
+        grid-template-columns: 40px 1fr 40px;
+    }
+}
+
+@media (min-width: $break-normal) {
+    .main-layout {
+        display: grid;
+        grid-template-columns: 120px 1fr 120px;
+    }
+}
+
+// @media (min-width: $break-wide) {
+//     .main-layout {
+//         display: grid;
+//         grid-template-columns: 150px 1fr 150px;
+//     }
+// }

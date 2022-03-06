@@ -1,0 +1,305 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
+@font-face {
+	font-family: Roboto;
+	src: url("../../fonts/Roboto-Regular.ttf");
+}
+
+@font-face {
+	font-family: Roboto light;
+	src: url("../../fonts/Roboto-Light.ttf");
+}
+
+@font-face {
+	font-family: fa-regular;
+	src: url("../../fonts/fa/fa-regular-400.ttf");
+}
+
+@font-face {
+	font-family: fa-brands;
+	src: url("../../fonts/fa/fa-brands-400.ttf");
+}
+
+@font-face {
+	font-family: fa-solid;
+	src: url("../../fonts/fa/fa-solid-900.ttf");
+}
+
+.far {
+	font-family: fa-regular;
+}
+
+.fas {
+	font-family: fa-solid;
+}
+
+.fab {
+	font-family: fa-brands;
+}
+
+.far.trash::before {
+	content: "\f2ed";
+}
+
+.far.bell::before {
+	content: "\f0f3";
+}
+
+.far.inbox::before {
+	content: "\f01c";
+}
+
+.far.calendar-check::before {
+	content: "\f274";
+}
+
+.fas.question::before {
+	content: "\f128";
+}
+
+.far.edit-hollow::before {
+	content: "\f044";
+}
+
+.far.edit-filled::before {
+	content: "\f044";
+}
+
+.far.search::before {
+	content: "\f002";
+}
+
+.far.calendar-alt::before {
+	content: "\f073";
+}
+
+.far.img::before {
+	content: "\f03e";
+}
+
+.far.clone::before {
+	content: "\f24d";
+}
+
+.far.times::before {
+	content: "\f057";
+}
+
+.far.star::before {
+	content: "\f005";
+}
+
+.far.chart-bar::before {
+	content: "\f080";
+}
+
+.far.list-alt::before {
+	content: "\f022";
+}
+
+.far.user::before {
+	content: "\f007";
+}
+
+.far.copy::before {
+	content: "\f0c5";
+}
+
+.far.calendar-times::before {
+	content: "\f273";
+}
+
+.far.clock::before {
+	content: "\f017";
+}
+
+/*  Brands */
+
+.fab.youtube::before {
+	content: "\f022";
+}
+
+/* Solid Style */
+
+.fas.exchange-alt::before {
+	content: "\f362";
+}
+
+.fas.undo::before {
+	content: "\f0e2";
+}
+
+.fas.th-list::before {
+	content: "\f00b";
+}
+
+.fas.caret-down::before {
+	content: "\f0d7";
+}
+
+.fas.chevron-down::before {
+	content: "\f078";
+}
+
+.fas.times::before {
+	content: "\f00d";
+}
+
+.fas.chevron-up::before {
+	content: "\f077";
+}
+.fas.link::before {
+	content: "\f0c1";
+}
+
+.fas.calculator::before {
+	content: "\f1ec";
+}
+
+.fas.robot::before {
+	content: "\f544";
+}
+
+.fas.plug::before {
+	content: "\f1e6";
+}
+
+.fas.info-circle::before {
+	content: "\f05a";
+}
+
+.fas.battery-three-quarters::before {
+	content: "\f241";
+}
+
+.fas.users::before {
+	content: "\f0c0";
+}
+
+.fas.exclamation::before {
+	content: "\f12a";
+}
+
+.fas.star::before {
+	content: "\f005";
+}
+
+.fas.chart-line::before {
+	content: "\f201";
+}
+
+.fas.ellipsis-h::before {
+	content: "\f141";
+}
+
+.fas.window::before {
+	content: "\f2d0";
+}
+
+.fas.search::before {
+	content: "\f002";
+}
+.fas.grip::before {
+	content: "\f58e";
+}
+.fas.angledown::before {
+	content: "\f107";
+}
+
+.fas.angleup::before {
+	content: "\f106";
+}
+
+.fas.angleright::before {
+	content: "\f105";
+}
+
+.fas.angleleft::before {
+	content: "\f104";
+}
+
+.fas.filter::before {
+	content: "\f0b0";
+	color: transparent;
+	font-size: 14px;
+	-webkit-text-stroke-width: 1.1px;
+	-webkit-text-stroke-color: rgb(27, 27, 27);
+}
+
+.fas.th-large::before {
+	content: "\f009";
+}
+
+.fas.puzzle-piece::before {
+	content: "\f12e";
+}
+
+.fas.user-plus::before {
+	content: "\f234";
+}
+
+.fas.inbox::before {
+	content: "\f01c";
+}
+
+.fas.arrow-left::before {
+	content: "\f060";
+}
+
+.fas.close-filled::before {
+	content: "\f410";
+}
+
+.fas.plus::before {
+	content: "\f067";
+}
+
+.fas.check::before {
+	content: "\f00c";
+}
+
+.fas.font::before {
+	content: "\f031";
+}
+
+.fas.chevron-left::before {
+	content: "\f053";
+}
+
+.fas.chevron-right::before {
+	content: "\f054";
+}
+
+.fas.list::before {
+	content: "\f03a";
+}
+
+.fas.color::before {
+	content: "\f53f";
+}
+
+.fas.pin::before {
+	content: "\f08d";
+}
+
+.fas.home::before {
+	content: "\f015";
+}
+
+.fas.traffic-light::before {
+	content: "\f637";
+}
+
+.fas.align-center::before {
+	content: "\f037";
+}
+.fas.thumbs-up::before {
+	content: "\f164";
+}
+.fas.reply::before {
+	content: "\f3e5";
+}
+
+.fas.align-justify::before {
+	content: "\f039";
+}

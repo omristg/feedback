@@ -1,15 +1,23 @@
-import { Card } from "./shared/Card"
-import { FaTimes } from 'react-icons/fa'
+import { useContext } from "react"
+import { FeedbackContext } from "../context/FeedbackContext"
 
-export const FeedbackItem = ({ item, onRemove }) => {
+import { Card } from "./shared/Card"
+import { FaTimes, FaEdit } from 'react-icons/fa'
+
+export const FeedbackItem = ({ item }) => {
+
+    const { removeFeedback, editFeedback } = useContext(FeedbackContext)
 
     const { rating, text, id } = item
 
     return (
         <Card >
             <div className="num-display">{rating}</div>
+            <button className="edit" onClick={() => editFeedback(item)}>
+                <FaEdit color="purple" />
+            </button>
             <button
-                onClick={() => onRemove(id)}
+                onClick={() => removeFeedback(id)}
                 className="close">
                 <FaTimes color="purple" />
             </button>

@@ -1,5 +1,5 @@
 {
-  "homepage": "https://omristg.github.io/feedback",
+  "homepage": "https://omristg.github.io/feedback/",
   "name": "feedback-app",
   "version": "0.1.0",
   "private": true,
@@ -8,7 +8,9 @@
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^0.25.0",
+    "concurrently": "^7.0.0",
     "framer-motion": "^4.1.17",
+    "json-server": "^0.17.0",
     "node-sass": "^7.0.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -27,7 +29,9 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "json": "json-server --watch db.json --port 5000",
+    "dev": "concurrently \"npm start\" \"npm run json\""
   },
   "eslintConfig": {
     "extends": [

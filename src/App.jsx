@@ -1,3 +1,4 @@
+import { v4 as uuidv4 } from 'uuid'
 import { useState } from 'react';
 
 import { Header } from './cmps/Header';
@@ -15,12 +16,17 @@ export function App() {
 		}
 	}
 
+	const onAddFeedback = (newFeedback) => {
+		newFeedback.id = uuidv4()
+		setFeedback([newFeedback, ...feedback])
+	}
+
 	return (
 		<>
 			<Header />
 			<div className="container">
 				<h1>My App!</h1>
-				<FeedbackForm />
+				<FeedbackForm onAddFeedback={onAddFeedback} />
 				<FeedbackStats feedback={feedback} />
 				<FeedbackList feedback={feedback} onRemove={onRemove} />
 			</div>

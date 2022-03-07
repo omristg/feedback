@@ -16,9 +16,7 @@ export const FeedbackItem = ({ item }) => {
             <button className="edit" onClick={() => editFeedback(item)}>
                 <FaEdit color="purple" />
             </button>
-            <button
-                onClick={() => removeFeedback(id)}
-                className="close">
+            <button className="close" onClick={() => removeFeedback(id)}>
                 <FaTimes color="purple" />
             </button>
             <div className="text-display">{text}</div>

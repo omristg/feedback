@@ -1,6 +1,5 @@
-import { useContext, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { FeedbackContext } from '../context/FeedbackContext'
-
 
 import { Card } from './shared/Card'
 import { Button } from './shared/Button'
@@ -8,12 +7,19 @@ import { RatingSelect } from './RatingSelect'
 
 export const FeedbackForm = () => {
 
-    const { addFeedback } = useContext(FeedbackContext)
+    const { addFeedback, feedbackEdit, updateFeedback } = useContext(FeedbackContext)
 
     const [text, setText] = useState('')
     const [isDisabled, setIsDisabled] = useState(true)
     const [messege, setMessege] = useState(null)
     const [rating, setRating] = useState(10)
+
+    useEffect(() => {
+        if (!feedbackEdit.edit) return
+        setIsDisabled(false)
+        setText(feedbackEdit.item.text)
+        setRating(feedbackEdit.item.rating)
+    }, [feedbackEdit])
 
     const handleChange = ({ target }) => {
         if (text === '') {
@@ -32,22 +38,30 @@ export const FeedbackForm = () => {
     const handleSubmit = (ev) => {
         ev.preventDefault()
         if (text.trim().length < 10) return
+        saveFeedback()
+    }
+
+    const saveFeedback = () => {
         const newFeedback = {
             text,
             rating
         }
-        addFeedback(newFeedback)
+        if (feedbackEdit.item) updateFeedback({ id: feedbackEdit.item.id, ...newFeedback })
+        else addFeedback(newFeedback)
     }
 
     return (
         <Card>
             <form onSubmit={handleSubmit}>
                 <h2>How would you rate your service with us?</h2>
-                <RatingSelect rating={rating} select={(rating) => setRating(rating)} />
+                <RatingSelect select={(rating) => setRating(rating)} />
                 <div className="input-group">
-                    <input type="text" value={text}
+                    <input
+                        type="text"
+                        value={text}
                         onChange={handleChange}
-                        placeholder='Write a review' />
+                        placeholder='Write a review'
+                    />
                     <Button type='submit' isDisabled={isDisabled} >Send</Button>
                 </div>
                 {messege && messege}

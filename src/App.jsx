@@ -1,6 +1,6 @@
 import { v4 as uuid } from 'uuid'
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route, NavLink } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
 import { Header } from './cmps/Header';
 import { About } from './pages/About'
@@ -45,7 +45,7 @@ export function App() {
 					<NavLink to="/" className={({ isActive }) => (isActive ? " red" : "")}>Home</NavLink>
 					<NavLink to="/about" className={({ isActive }) => (isActive ? " red" : "")}>About</NavLink>
 				</div> */}
-				
+
 			</div>
 		</Router>
 	)

@@ -1,20 +1,8 @@
-import { useEffect, useState, useContext } from "react"
-import { FeedbackContext } from "../context/FeedbackContext"
 
-export const RatingSelect = ({ select }) => {
-
-
-	const { feedbackEdit } = useContext(FeedbackContext)
-	const [selected, setSelected] = useState(10)
-
-	useEffect(() => {
-		if (!feedbackEdit.item) return
-		setSelected(feedbackEdit.item.rating)
-	}, [feedbackEdit])
+export const RatingSelect = ({ rating, setRating }) => {
 
 	const handleChange = ({ currentTarget }) => {
-		setSelected(+currentTarget.value);
-		select(+currentTarget.value)
+		setRating(+currentTarget.value)
 	}
 
 	const idxs = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
@@ -30,7 +18,7 @@ export const RatingSelect = ({ select }) => {
 							name="rating"
 							value={idx}
 							onChange={handleChange}
-							checked={selected === idx}
+							checked={rating === idx}
 						/>
 						<label htmlFor={`num${idx}`}>{idx}</label>
 					</li>

@@ -45,18 +45,26 @@ export const FeedbackProvider = ({ children }) => {
         setFeedbacks([savedFeedback, ...feedbacks])
     }
 
+    const updateFeedback = async (feedbackToUpdate, feedbackId) => {
+        const res = await fetch(`${BASE_URL}/${feedbackId}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(feedbackToUpdate)
+        })
+        const savedFeedback = await res.json()
+
+        setFeedbacks(feedbacks.map(item => {
+            return (item.id === feedbackId) ? savedFeedback : item
+        }))
+    }
+
     const editFeedback = (item) => {
         setFeedbackEdit({
             item,
             edit: true
         })
-    }
-
-    const updateFeedback = (feedbackToUpdate) => {
-        const { id } = feedbackToUpdate
-        setFeedbacks(feedbacks.map(item => {
-            return (item.id === id) ? feedbackToUpdate : item
-        }))
     }
 
     return (

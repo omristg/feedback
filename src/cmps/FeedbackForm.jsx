@@ -21,40 +21,47 @@ export const FeedbackForm = () => {
         setRating(feedbackEdit.item.rating)
     }, [feedbackEdit])
 
-    const handleChange = ({ target }) => {
-        if (text === '') {
+    const handleChange = ({ target: { value } }) => {
+        if (!value) {
             setIsDisabled(true)
             setMessege(null)
-        } else if (text !== '' && text.trim().length <= 10) {
+        } else if (value && value.trim().length < 10) {
             setIsDisabled(true)
             setMessege('Text must be at least 10 characters')
         } else {
             setIsDisabled(false)
             setMessege(null)
         }
-        setText(target.value)
+        setText(value)
     }
 
-    const handleSubmit = (ev) => {
+    const handleSubmit = async (ev) => {
         ev.preventDefault()
         if (text.trim().length < 10) return
-        saveFeedback()
+        await saveFeedback()
+        resetForm()
     }
 
-    const saveFeedback = () => {
+    const saveFeedback = async () => {
         const newFeedback = {
             text,
             rating
         }
-        if (feedbackEdit.item) updateFeedback({ id: feedbackEdit.item.id, ...newFeedback })
-        else addFeedback(newFeedback)
+        if (feedbackEdit.item) await updateFeedback(newFeedback, feedbackEdit.item.id)
+        else await addFeedback(newFeedback)
+    }
+
+    const resetForm = () => {
+        setText('')
+        setRating(10)
+        setIsDisabled(true)
     }
 
     return (
         <Card>
             <form onSubmit={handleSubmit}>
                 <h2>How would you rate your service with us?</h2>
-                <RatingSelect select={(rating) => setRating(rating)} />
+                <RatingSelect setRating={setRating} rating={rating} />
                 <div className="input-group">
                     <input
                         type="text"
